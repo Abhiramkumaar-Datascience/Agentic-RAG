@@ -1,0 +1,14 @@
+streamlit
+openai
+httpx
+azure-search-documents
+azure-storage-blob
+azure-identity
+python-dotenv
+pymupdf
+tenacity
+langchain
+langchain-text-splitters
+pandas
+tqdm
+firecrawl-py
