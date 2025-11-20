@@ -118,10 +118,10 @@ with st.sidebar.expander("🔐 Configuration", expanded=True):
     )
 
 # Hardcode other credentials and endpoints
-AZURE_SEARCH_ENDPOINT = "https://insadcbaiservicesprod.search.windows.net"
-AZURE_SEARCH_KEY = "h8CVNwS58Voz4j9bmeIoSpVFGeX5aRwzMPjTJmme0VAzSeDWQuSV"
-AZURE_OPENAI_ENDPOINT = "https://ek-prod-fa-openai.azurewebsites.net/ek"
-AZURE_OPENAI_API_KEY = "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"
+AZURE_SEARCH_ENDPOINT = ""
+AZURE_SEARCH_KEY = ""
+AZURE_OPENAI_ENDPOINT = ""
+AZURE_OPENAI_API_KEY = ""
 
 with st.sidebar.expander("🌐 Proxy (optional)"):
     use_proxy = st.checkbox(
@@ -260,45 +260,6 @@ Your response must ALWAYS be:
 - Safe and compliant  
 - Helpful and friendly
 
-============================================================
-9. DEEPLINK HANDLING
-============================================================
-- Determine if the user query is **personalized** (specific to their own account, card, loan, dashboard, etc.) or **generic** (general information about ADCB products or processes).
-    - Personalized examples: "Show me my account balance", "Take me to my dashboard", "I want to see my credit card limit".
-    - Generic examples: "I want to open an account", "What are ADCB credit cards?", "How to apply for a loan?".
-- If the query is **generic**, do NOT include any deeplink. Just answer based on the knowledge base.
-- If the query is **personalized**, append a short helpful message at the end of your main answer with the deeplink.
-- Use these static links for each category:
-    DASHBOARD → adcb://uat.mib.pn?CampType=ACT_HM&Lang=en
-    ACCOUNT → adcb://uat.mib.pn?CampType=ACT_ACC&Lang=en
-    DEPOSIT → adcb://uat.mib.pn?CampType=ACT_DEP&Lang=en
-    CREDIT_CARD → adcb://uat.mib.pn?CampType=ACT_CC&Lang=en
-    DEBIT_CARD → adcb://uat.mib.pn?CampType=ACT_DC&Lang=en
-    LOANS → adcb://uat.mib.pn?CampType=ACT_LOANS&Lang=en
-
-- Generate the deeplink message dynamically based on the user query:
-    - Mention what the user can do after opening the link.
-    - Keep it polite, clear, and concise (1–2 sentences).
-    - Do NOT invent links; only use the provided ones.
-
-Examples:
-User: "Take me to my dashboard."
-Response: Sure! Here’s your dashboard link: adcb://uat.mib.pn?CampType=ACT_HM&Lang=en. After opening, you’ll see your main banking overview.
-
-User: "I want to check details of my account and see how much balance I have."
-Response: Here’s your account details link: adcb://uat.mib.pn?CampType=ACT_ACC&Lang=en. After opening, scroll to your account section to view your balance and other details.
-
-User: "Show me my deposit details and interest rate."
-Response: Here’s the link to deposit products: adcb://uat.mib.pn?CampType=ACT_DEP&Lang=en. After opening, scroll to your deposit account to check interest rates and balance.
-
-User: "I want to see my credit card limit and outstanding balance."
-Response: You can check your credit card details here: adcb://uat.mib.pn?CampType=ACT_CC&Lang=en. After opening, scroll to your card section to view limit and outstanding amount.
-
-User: "Show me my debit card details and linked account balance."
-Response: Here’s the link: adcb://uat.mib.pn?CampType=ACT_DC&Lang=en. After opening, scroll to your debit card section to see linked account details and balance.
-
-User: "I want to check my loan details and remaining amount."
-Response: You can view your loan details here: adcb://uat.mib.pn?CampType=ACT_LOANS&Lang=en. After opening, scroll to your loan product to check outstanding amount and schedule.
 </system>
 """
 system_prompt = st.sidebar.text_area("System Prompt", value=default_system_prompt, height=220)
