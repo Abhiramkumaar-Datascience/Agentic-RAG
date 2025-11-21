@@ -118,10 +118,10 @@ with st.sidebar.expander("🔐 Configuration", expanded=True):
     )
 
 # Hardcode other credentials and endpoints
-AZURE_SEARCH_ENDPOINT = ""
-AZURE_SEARCH_KEY = ""
-AZURE_OPENAI_ENDPOINT = ""
-AZURE_OPENAI_API_KEY = ""
+AZURE_SEARCH_ENDPOINT = "https://insadcbaiservicesprod.search.windows.net"
+AZURE_SEARCH_KEY = "h8CVNwS58Voz4j9bmeIoSpVFGeX5aRwzMPjTJmme0VAzSeDWQuSV"
+AZURE_OPENAI_ENDPOINT = "https://ek-prod-fa-openai.azurewebsites.net/ek"
+AZURE_OPENAI_API_KEY = "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"
 
 with st.sidebar.expander("🌐 Proxy (optional)"):
     use_proxy = st.checkbox(
