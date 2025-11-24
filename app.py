@@ -19,11 +19,11 @@ from PIL import Image
 # =========================
 # Constants & Defaults
 # =========================
-DEFAULT_SEARCH_ENDPOINT = "https://insadcbaiservicesprod.search.windows.net"
-DEFAULT_SEARCH_INDEX = "rag-mib-poc-ai"
+DEFAULT_SEARCH_ENDPOINT = ""
+DEFAULT_SEARCH_INDEX = ""
 
 # Index schema constants
-SEMANTIC_CONFIG_NAME = "mib-semantic-ranker"
+SEMANTIC_CONFIG_NAME = ""
 VECTOR_FIELD = "chunk_vector"
 TEXT_FIELD = "chunk"
 
